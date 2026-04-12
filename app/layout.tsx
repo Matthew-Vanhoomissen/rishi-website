@@ -1,6 +1,18 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import didone from "next/font/local";
+import inter from "next/font/local";
+
+const interFont = inter({
+  src: "../public/fonts/Inter-VariableFont_opsz,wght.ttf",
+  variable: "--font-interFont"
+});
+
+const anticDidone = didone({
+  src: "../public/fonts/AnticDidone-Regular.ttf",
+  variable: "--font-anticDidone"
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +37,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`
+          ${geistSans.variable} 
+          ${geistMono.variable}
+          ${anticDidone.variable} 
+          ${interFont.variable}
+          antialiased` }
+        
       >
         {children}
       </body>
