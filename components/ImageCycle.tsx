@@ -1,13 +1,14 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link"
 
 // — paste your real src paths here —
 const BAG_IMAGES = [
-  { src: "/images/bag.jpg", label: "Bag One" },
-  { src: "/images/bag.jpg", label: "Bag Two" },
-  { src: "/images/bag.jpg", label: "Bag Three" },
-  { src: "/images/bag.jpg", label: "Bag Four" },
-  { src: "/images/bag.jpg", label: "Bag Five" },
+  { src: "/images/WhiteBag.png", label: "Silus White" },
+  { src: "/images/BlackBag.png", label: "Silus Black" },
+  { src: "/images/RedBag.png", label: "Silus Maroon" },
+  { src: "/images/bag.jpg", label: "" },
+  { src: "/images/bag.jpg", label: "" },
 ];
 
 export function ImageCycle() {
@@ -50,20 +51,18 @@ export function ImageCycle() {
           {visible.map((bag, i) => (
             <div key={`${bag.src}-${i}`} className="flex-1 flex flex-col gap-4 group cursor-pointer">
               {/* Image box — replace bg-stone-300 with <img> when ready */}
-              <div className="relative w-full aspect-[3/4] bg-stone-300 overflow-hidden">
-                <img
-                  src={bag.src}
-                  alt={bag.label}
-                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:scale-105 transition-transform duration-500"
-                  onLoad={(e) => (e.currentTarget.style.opacity = "1")}
-                />
-                {/* Fallback label shown while no real image */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="font-anticDidone text-stone-400 text-sm tracking-widest uppercase">
-                    {bag.label}
-                  </p>
-                </div>
-              </div>
+              <Link 
+                href="/collections"
+                className="relative w-full aspect-[3/4] bg-stone-300 overflow-hidden">
+                  <img
+                    src={bag.src}
+                    alt={bag.label}
+                
+                    className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:scale-105 transition-transform duration-500"
+                    onLoad={(e) => (e.currentTarget.style.opacity = "1")}
+                  />
+                
+              </Link>
 
               {/* Caption */}
               <div className="flex flex-col gap-1 px-1">

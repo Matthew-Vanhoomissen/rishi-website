@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 
 export function OurMission() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -55,7 +56,7 @@ export function OurMission() {
         className="pointer-events-none select-none absolute -top-8 right-0 font-anticDidone text-[22rem] text-stone-50 leading-none tracking-tighter"
         aria-hidden
       >
-        M
+        S
       </span>
 
       {/* Top rule */}
@@ -126,12 +127,12 @@ export function OurMission() {
         className="mt-20 flex items-center gap-6 transition-all duration-700 ease-out"
         style={{ opacity: 0, transform: "translateY(20px)" }}
       >
-        <a
-          href="#"
+        <Link
+          href="/about"
           className="font-anticDidone text-[11px] tracking-[0.3em] uppercase text-stone-800 border-b border-stone-800 pb-0.5 hover:text-stone-400 hover:border-stone-400 transition-colors duration-300"
         >
           Read Our Story
-        </a>
+        </Link>
         <div className="flex-1 h-px bg-stone-100 max-w-xs" />
       </div>
     </section>

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 
 export function ShoppingBanner() {
   const bannerRef = useRef<HTMLDivElement>(null);
@@ -90,8 +91,8 @@ export function ShoppingBanner() {
         className="transition-all duration-700 ease-out"
         style={{ opacity: 0, transform: "translateY(20px) scale(0.97)" }}
       >
-        <a
-          href="#"
+        <Link
+          href="/collections"
           className="group relative inline-flex items-center gap-4 border border-white hover:border-white px-12 py-5 transition-colors duration-300"
         >
           {/* Gold fill on hover */}
@@ -102,7 +103,7 @@ export function ShoppingBanner() {
           <span className="relative font-anticDidone text-white group-hover:text-stone-900 group-hover:translate-x-1 transition-all duration-300 z-10 text-lg leading-none">
             →
           </span>
-        </a>
+        </Link>
       </div>
 
       {/* Bottom decorative row */}

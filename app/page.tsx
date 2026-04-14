@@ -1,9 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ImageCycle } from '../components/ImageCycle';
 import { OurMission } from '../components/OurMission';
 import { ShoppingBanner } from '../components/ShoppingBanner';
 import { TopBanner  } from '../components/TopBanner';
 import { BottomBanner } from '../components/BottomBanner';
+import { TheProcess } from '../components/TheProcess';
 
 
 export default function Home() {
@@ -43,6 +45,7 @@ export default function Home() {
 
         <ImageCycle />
         <OurMission />
+        <TheProcess />
         <ShoppingBanner />
         {/* TEMPORARY SPACER */}
         {/*<div className="h-[200vh] bg-stone-100" />*/}

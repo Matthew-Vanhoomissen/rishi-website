@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function TopBanner() {
     return (
@@ -16,28 +17,32 @@ export function TopBanner() {
 
               {/* Optional nav links — hide on smaller screens */}
               <nav className="hidden lg:flex gap-8">
-                {["Collections", "Silus Studio", "Craftsmanship"].map((item) => (
-                  <a
-                    key={item}
-                    href="#"
+                {[
+                { label: "Collections", href: "/collections" },
+                { label: "Silus Studio", href: "/about" },
+                { label: "Craftsmanship", href: "/craftsmanship" },
+                ].map((item) => (
+                <Link
+                    key={item.label}
+                    href={item.href}
                     className="font-anticDidone text-[13px] tracking-[0.15em] text-stone-500 hover:text-stone-900 transition-colors duration-200"
-                  >
-                    {item}
-                  </a>
+                >
+                    {item.label}
+                </Link>
                 ))}
               </nav>
             </div>
 
             {/* CENTER — Brand title */}
             <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
-              <a href="#" className="group flex flex-col items-center">
+              <Link href="/" className="group flex flex-col items-center">
                 <h1 className="font-anticDidone text-2xl tracking-[0.35em] uppercase text-stone-900 group-hover:text-stone-600 transition-colors duration-300">
                   Silus Studio
                 </h1>
                 <p className="font-anticDidone text-[9px] tracking-[0.45em] uppercase text-stone-400 mt-0.5">
                   Est. 2026
                 </p>
-              </a>
+              </Link>
             </div>
 
             {/* RIGHT — Search & Bag */}
