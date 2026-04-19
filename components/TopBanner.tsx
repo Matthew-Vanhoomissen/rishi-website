@@ -3,7 +3,11 @@ import Link from "next/link";
 
 export function TopBanner() {
     return (
-            <div className="flex items-center justify-between px-10 py-5">
+        <header className="bg-white w-full">
+          {/* Thin gold accent line at top */}
+          <div className="h-px bg-gradient-to-r from-transparent via-amber-700/40 to-transparent" />
+          
+          <div className="flex items-center justify-between px-10 py-5">
 
             {/* LEFT — Hamburger menu */}
             <div className="flex items-center gap-10">
@@ -69,5 +73,8 @@ export function TopBanner() {
             </div>
 
           </div>
+          {/* Bottom border */}
+          <div className="h-px bg-stone-100" />
+        </header>
     );
 }
