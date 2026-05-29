@@ -4,19 +4,8 @@ import Link from "next/link";
 
 import { TopBanner } from "@/components/TopBanner";
 import { BottomBanner } from "@/components/BottomBanner";
-
-// — swap in your real products —
-const PRODUCTS = [
-  { id: 1, name: "Structured Tote", category: "Totes & Shoppers", material: "Calf Leather", colour: "Noir", price: "€2,450" },
-  { id: 2, name: "Mini Saddle Bag", category: "Handbags", material: "Suede", colour: "Camel", price: "€1,890" },
-  { id: 3, name: "Evening Clutch", category: "Clutches", material: "Satin Leather", colour: "Ivory", price: "€1,200" },
-  { id: 4, name: "Weekender Tote", category: "Totes & Shoppers", material: "Grain Leather", colour: "Cognac", price: "€3,100" },
-  { id: 5, name: "Fold-Over Clutch", category: "Clutches", material: "Calf Leather", colour: "Noir", price: "€980" },
-  { id: 6, name: "Crossbody Sling", category: "Handbags", material: "Nappa Leather", colour: "Stone", price: "€1,650" },
-  { id: 7, name: "Box Bag", category: "Handbags", material: "Calf Leather", colour: "Ivory", price: "€2,200" },
-  { id: 8, name: "Market Shopper", category: "Totes & Shoppers", material: "Woven Leather", colour: "Camel", price: "€1,750" },
-  { id: 9, name: "Card Holder Clutch", category: "Clutches", material: "Suede", colour: "Stone", price: "€750" },
-];
+import { getProductBySlug } from "@/public/lib/products";
+import { PRODUCTS } from "@/public/lib/products";
 
 const FILTERS = [
   {
@@ -147,11 +136,11 @@ export default function Home() {
           {/* Grid */}
           <div className="grid grid-cols-3 gap-x-8 gap-y-14">
             {PRODUCTS.map((product) => (
-              <Link href={`/collections/${product.id}`} key={product.id} className="group flex flex-col gap-4 cursor-pointer">
+              <Link href={`/collections/${product.slug}`} key={product.id} className="group flex flex-col gap-4 cursor-pointer">
                 {/* Image placeholder */}
                 <div className="relative w-full aspect-[3/4] bg-stone-100 overflow-hidden">
                   {/* Swap for <img> when ready */}
-                  <div className="absolute inset-0 bg-stone-200 group-hover:bg-stone-100 transition-colors duration-500" />
+                  <img src={product.src} className="w-full h-full object-cover object-[center_20%] bg-stone-200 group-hover:bg-stone-100 transition-colors duration-500" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="font-anticDidone text-stone-300 text-xs tracking-widest uppercase">
                       {product.name}

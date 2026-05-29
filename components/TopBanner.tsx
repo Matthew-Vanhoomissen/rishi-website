@@ -40,8 +40,8 @@ export function TopBanner() {
             {/* CENTER — Brand title */}
             <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
               <Link href="/" className="group flex flex-col items-center">
-                <h1 className="font-anticDidone text-2xl tracking-[0.35em] uppercase text-stone-900 group-hover:text-stone-600 transition-colors duration-300">
-                  Silus Studio
+                <h1 className="font-anticDidone text-3xl tracking-[0.35em] uppercase text-stone-900 group-hover:text-stone-600 transition-colors duration-300">
+                  Silus
                 </h1>
                 <p className="font-anticDidone text-[9px] tracking-[0.45em] uppercase text-stone-400 mt-0.5">
                   Est. 2026
